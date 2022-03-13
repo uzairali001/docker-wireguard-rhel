@@ -38,3 +38,15 @@ git clone https://github.com/uzairali001/docker-wireguard-rhel/ ./wireguard
 cd ./wireguard
 docker compose up -d
 ```
+
+if you get this error
+```
+modprobe: ERROR: could not insert 'ip_tables': Exec format error
+wireguard  | iptables v1.6.1: can't initialize iptables table `filter': Table does not exist (do you need to insmod?)
+wireguard  | Perhaps iptables or your kernel needs to be upgraded.
+wireguard  | [#] ip link delete dev wg0
+```
+then run this
+```
+sudo modprobe iptable_raw
+```

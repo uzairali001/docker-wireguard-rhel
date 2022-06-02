@@ -50,3 +50,7 @@ then run this
 ```
 sudo modprobe iptable_raw
 ```
+To make it load automatically after reboot
+```
+sudo echo "iptable_raw" | sudo tee /etc/modules-load.d/iptable_raw.conf
+```
